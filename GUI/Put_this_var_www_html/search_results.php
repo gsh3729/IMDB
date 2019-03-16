@@ -78,11 +78,29 @@ div {
 require("./dbconnection.php");
 
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
-   	$field1 = $_POST['field1'];
+   	$Movie = $_POST['Movie'];
+    $actor = $_POST['actor'];
+    $actress = $_POST['actress'];
+    $director = $_POST['director'];
+    $genre = $_POST['genre'];
+    echo "<br>";
+    echo $Movie;
+    echo "<br>";
+    echo $actor;
+    echo "<br>";
+    echo $actress;
+    echo "<br>";
+    echo $director;
+    echo "<br>";
+    echo $genre;
+    echo "<br>";
+   
+	if($Movie <> null && $_POST['submit']<>null ){   
+	$sql1 = "SELECT * FROM Movie WHERE Title= '$Movie'";
+  
+  $result = $conn->query($sql1);
 
-	if($field1 <> null && $_POST['submit']<>null ){   
-	$sql1 = "SELECT * FROM Movie WHERE Title= '$field1'";
-   	$result = $conn->query($sql1);?>
+  ?>
 	<table id="customers" >
 	<tr>
 	<th>Title</th>

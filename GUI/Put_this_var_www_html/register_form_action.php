@@ -75,47 +75,52 @@ div {
 <?php 
 require("./dbconnection.php");
 
-if ($_SERVER["REQUEST_METHOD"]=="POST")
-{
+if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $email = $_POST['email'];
     $psw = $_POST['psw'];
     $psw_repeat = $_POST['psw-repeat'];
-    echo "You are in register form";
-  if($email <> null)
-  {
-     $sql = "SELECT user FROM mysql.user WHERE user = '$email'";
-     $res = $conn->query($sql);
-     if($res == null)
-     {
-        die("Username already exist");
-     }
-  }
-  else
-  {
-     die("Invalid Username");
-  }
 
-  if($psw != $psw_repeat)
-  {
-     die("Passwords Do not match");
-  }
+    echo $email;
+    echo $psw;
+    echo $psw_repeat;
 
-  else
-  {   
-      $sql1 = "CREATE USER $email@localhost IDENTIFIED BY $psw";
-      echo $sql1;
-      $result =  or die("Failed to execute query");
-      echo $result;
-      echo "Query executed";
-      ?>
-      <!-- <table id="customers" >
-      <tr>
-      <th>Song</th>
-      </tr> -->
+  if($email <> null){   
+  $sql = "CREATE user $email@localhost IDENTIFIED BY $psw"; 
+  $res = $conn->query($sql);
+  $sql1 = "SELECT * FROM Movie";
+  $result = $conn->query($sql1);
+?>
+  <table id="customers" >
+  <tr>
+  <th>Title</th>
+  <th>Language</th>
+  <th>Genre</th>
+  <th>Film_series</th>
+  <th>Collection</th>
+  <th>Rating</th>
+  <th>Release_Date</th>
+  <th>Run Time</th>
+  </tr>
 
   
   
-      
+  <?php
+
+  while ($row = $result->fetch_assoc() ) {?>
+  <tr >
+  <td><?php echo $row["Title"]?></td>
+  <td><?php echo $row["Language"] ?></td>
+  <td><?php echo $row["Genre"] ?></td>
+  <td><?php echo $row["Film_series"] ?></td>
+  <td><?php echo $row["Collection"] ?></td>
+  <td><?php echo $row["Rating"] ?></td>
+  <td><?php echo $row["Release_Date"] ?></td>
+  <td><?php echo $row["RunTime"] ?></td>
+  
+  </tr>
+  <?php
+  }
+  ?>
   
   
 <?php

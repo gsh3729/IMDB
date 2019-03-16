@@ -83,7 +83,11 @@ div {
 <div id="container" >
 	<div id ="left" style="float:left;width:50%;">
 	<form action="search_results.php" method="post">
-	    Movie_Name: <br><input type="text" name = "field1" /><br/>   
+	    Movie_Name: <br><input type="text" name = "Movie" /><br/>
+      Actor: <br><input type="text" name = "actor" /><br/>
+      Actress: <br><input type="text" name = "actress" /><br/>
+      Director: <br><input type="text" name = "director" /><br/>
+      Genre: <br><input type="text" name = "genre" /><br/>   
 	    Submit    : <br><input type="submit" name = "submit" value = "submit" />
 	</form>
 	</div>
@@ -93,7 +97,7 @@ div {
 </div>
 
 
-<div id="container">
+<!-- <div id="container">
 	<div id ="left" style="float:left;width:50%;">
 	<h3> Search for songs of a Movie </h3>
 	<form action="songs_results.php" method="post">
@@ -102,7 +106,7 @@ div {
 	</form>
 	</div>
 	
-</div>
+</div> -->
 
 
 
