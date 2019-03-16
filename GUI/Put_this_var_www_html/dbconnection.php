@@ -1,7 +1,7 @@
 <?php
 $servermame = "localhost";
 $username = "root";
-$password = "8757";
+$password = "111222";
 $dbname = 'imdb';
 
 
@@ -10,7 +10,7 @@ $dbname = 'imdb';
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if($conn->connect_error){
-	die("connection failed:".$conn->connect_error);
+	die("Database Connection failed:".$conn->connect_error);
 }else{
 	echo "IMDB database connected successfully";
 }

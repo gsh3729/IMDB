@@ -69,7 +69,7 @@ a {
 </head>
 <body>
 
-<form action="/register_form_action.php" method = "post">
+<form action="./register_form_action.php" method = "post">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -85,14 +85,20 @@ a {
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    
 
     <button type="submit" class="registerbtn" name = "submit">Register</button>
   </div>
   
   <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="login_form.php">Sign in</a>.</p>    
   </div>
 </form>
+
+<!-- <form action="/login_form.php" method="post">
+  <p>Already have an account? <a href="#">Sign in</a>.</p>
+
+</form> -->
 
 </body>
 </html>

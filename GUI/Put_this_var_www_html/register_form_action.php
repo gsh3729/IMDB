@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <style>
 .button {
   background-color: #4CAF50;
@@ -73,7 +74,7 @@ div {
 
 
 <?php 
-require("./dbconnection.php");
+
 
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $email = $_POST['email'];
@@ -85,8 +86,19 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     echo $psw_repeat;
 
   if($email <> null){   
-  $sql = "CREATE user $email@localhost IDENTIFIED BY $psw"; 
+  require("./dbconnection.php");
+  $sql = "CREATE user '$email'@localhost IDENTIFIED BY '$psw' "; 
+  $grant = "GRANT select ON Movie to '$email'@'localhost' ";
   $res = $conn->query($sql);
+  $conn->query($grant);
+  $conn->close();
+  // echo "harsha";
+  $conn = new mysqli("localhost", $email, $psw, "imdb");
+  if($conn->connect_error){
+  die("Database Connection failed:".$conn->connect_error);
+  }else{
+    echo "IMDB database connected successfully";
+  }
   $sql1 = "SELECT * FROM Movie";
   $result = $conn->query($sql1);
 ?>

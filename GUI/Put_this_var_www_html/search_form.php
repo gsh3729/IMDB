@@ -83,7 +83,7 @@ div {
 <div id="container" >
 	<div id ="left" style="float:left;width:50%;">
 	<form action="search_results.php" method="post">
-	    Movie_Name: <br><input type="text" name = "Movie" /><br/>
+	    Movie_Name: <br><input type="text" name = "movie" /><br/>
       Actor: <br><input type="text" name = "actor" /><br/>
       Actress: <br><input type="text" name = "actress" /><br/>
       Director: <br><input type="text" name = "director" /><br/>

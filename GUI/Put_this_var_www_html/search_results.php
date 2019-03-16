@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<style>
+<!-- <style>
 .button {
   background-color: #4CAF50;
   border: none;
@@ -70,7 +70,7 @@ div {
   color: white;
 }
 </style>
-
+ -->
 
 
 
@@ -78,13 +78,13 @@ div {
 require("./dbconnection.php");
 
 if ($_SERVER["REQUEST_METHOD"]=="POST"){
-   	$Movie = $_POST['Movie'];
+   	$movie = $_POST['movie'];
     $actor = $_POST['actor'];
     $actress = $_POST['actress'];
     $director = $_POST['director'];
     $genre = $_POST['genre'];
     echo "<br>";
-    echo $Movie;
+    echo $movie;
     echo "<br>";
     echo $actor;
     echo "<br>";
@@ -95,13 +95,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     echo $genre;
     echo "<br>";
    
-	if($Movie <> null && $_POST['submit']<>null ){   
-	$sql1 = "SELECT * FROM Movie WHERE Title= '$Movie'";
+	if($movie <> null && $_POST['submit']<>null ){   
+	$sql1 = "SELECT * FROM Movie WHERE Title= '$movie'";
   
   $result = $conn->query($sql1);
 
   ?>
-	<table id="customers" >
+	<table  >
 	<tr>
 	<th>Title</th>
 	<th>Language</th>
@@ -131,15 +131,20 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	</tr>
 	<?php
 	}
-	?>
+	//while end?> 
 	
 	
 <?php
-	}
+	}  //if movie end
+
+
+
+  
 
 	
 
-}?>
+} //if post end
+ ?> 
 
 
 
