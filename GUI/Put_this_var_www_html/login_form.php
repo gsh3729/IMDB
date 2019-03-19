@@ -70,7 +70,7 @@ span.psw {
 
 <h2>Login Form</h2>
 
-<form action="login_form.php" method="post">
+<form action="login_form_action.php" method="post">
   <div class="imgcontainer">
     <img src="IMDB_Logo_2016.svg" alt="Avatar" class="avatar">
   </div>
