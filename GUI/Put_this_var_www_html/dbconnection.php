@@ -1,7 +1,7 @@
 <?php
 $servermame = "localhost";
 $username = "root";
-$password = "111222";
+$password = "8757";
 $dbname = 'imdb';
 
 

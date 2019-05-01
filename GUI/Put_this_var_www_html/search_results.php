@@ -94,9 +94,35 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     echo "<br>";
     echo $genre;
     echo "<br>";
-   
-	if($movie <> null && $_POST['submit']<>null ){   
-	$sql1 = "SELECT * FROM Movie WHERE Title= '$movie'";
+    
+    if($actor == null)
+    {
+        $actor = '';
+    }
+
+    if($movie == null)
+    {
+        $movie = '';
+    }
+
+    if($actress == null)
+    {
+        $actress = '';
+    }
+
+    if($director == null)
+    {
+        $director = '';
+    }
+
+    if($genre == null)
+    {
+        $genre = '';
+    }
+
+
+	if($_POST['submit']<>null ){   
+	$sql1 = "CALL movie_search('$movie','$genre','$actor','$actress','$director')";
   
   $result = $conn->query($sql1);
 
@@ -106,11 +132,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	<th>Title</th>
 	<th>Language</th>
 	<th>Genre</th>
-	<th>Film_series</th>
-	<th>Collection</th>
 	<th>Rating</th>
-	<th>Release_Date</th>
-	<th>Run Time</th>
 	</tr>
 
 	
@@ -122,11 +144,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 	<td><?php echo $row["Title"]?></td>
 	<td><?php echo $row["Language"] ?></td>
 	<td><?php echo $row["Genre"] ?></td>
-	<td><?php echo $row["Film_series"] ?></td>
-	<td><?php echo $row["Collection"] ?></td>
 	<td><?php echo $row["Rating"] ?></td>
-	<td><?php echo $row["Release_Date"] ?></td>
-	<td><?php echo $row["RunTime"] ?></td>
 	
 	</tr>
 	<?php
