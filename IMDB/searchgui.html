@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<style>
+.button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Search For Movies</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+	<!-- <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" /> -->
+	<!-- <link rel="icon" type="image/png" href="assets/img/favicon.png" /> -->
+
+	<!--     Fonts and icons     -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+	<!-- CSS Files -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/material-bootstrap-wizard.css" rel="stylesheet" />
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link href="assets/css/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="image-container set-full-height" style="background-image: url('assets/img/movielist.jpeg')">
+	    <!--   Creative Tim Branding   -->
+	    <a href="logingui.html">
+	         <div class="logo-container">
+	            <div class="logo">
+	                <img src="assets/img/imdb.png">
+	            </div>
+	            <div class="brand">
+	                IMDB
+	            </div>
+	        </div>
+	    </a>
+
+		
+	    <!--   Big container   -->
+	    <div class="container">
+	        <div class="row">
+		        <div class="col-sm-8 col-sm-offset-2">
+		            <!--      Wizard container        -->
+		            <div class="wizard-container">
+		                <div class="card wizard-card" data-color="red" id="wizard">
+		                    <form action="search_results.php" method="POST">
+		                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+
+		                    	
+								<div class="wizard-navigation">
+									<ul>
+			                            <li><a href="#details" data-toggle="tab">Search Movies</a></li>
+			                            <li><a href="#captain" data-toggle="tab">Search Songs</a></li>
+			                        </ul>
+								</div>
+
+		                        <div class="tab-content">
+		                            <div class="tab-pane" id="details">
+		                            	<div class="row">
+			                            	<div class="col-sm-12">
+			                                	<h4 class="info-text"> Let's start searching for Movies</h4>
+			                            	</div>
+		                                	<div class="col-sm-6">
+												<div class="input-group">
+													
+													<div class="form-group label-floating">
+			                                          	<label class="control-label">Movie</label>
+			                                          	<input name="movie" type="text" class="form-control">
+			                                        </div>
+												</div>
+
+												<div class="input-group">
+													
+													<div class="form-group label-floating">
+			                                          	<label class="control-label">Hero</label>
+			                                          	<input name="actor" type="text" class="form-control">
+			                                        </div>
+												</div>
+
+		                                	</div>
+		                                	<div class="col-sm-6" >
+		                                    	<div class="input-group" >
+													
+													<div class="form-group label-floating" >
+			                                          	<label class="control-label">Heroine</label>
+			                                          	<input name="actress" type="text" class="form-control">
+			                                        </div>
+												</div>
+
+												<div class="input-group">
+													
+													<div class="form-group label-floating" >
+			                                          	<label class="control-label">Director</label>
+			                                          	<input name="director" type="text" class="form-control">
+			                                        </div>
+												</div>
+		                                	</div>
+		                                	<div class="col-sm-6">
+		                                		<div class="input-group">
+		                                			<div class="form-group label-floating" >
+			                                          	<label class="control-label">Genre</label>
+			                                          	<input name="genre" type="text" class="form-control">
+			                                        </div>
+		                                		</div>
+		                                	</div>
+
+
+		                                	<div class="wizard-footer">
+	                            	<div class="pull-right">
+	                                    
+	                                    <input type='submit' class="button" name='submit' value='Submit' />
+	                                </div>
+	                                
+	                                
+	                        	</div>
+		                                	<!-- <div class="col-sm-6" >
+		                                    	<form method="POST" action='IMDB/s.php'>
+
+												<div class="input-group">
+													
+													<div class="form-group label-floating" >
+			                                          	
+			                                          	<a href='IMDB/s.php' class="button"  >Vamsi</a>
+			                                        </div>
+												</div></form>
+		                                	</div> -->
+		                            	</div>
+		                            </div>
+		                          	 <div class="tab-pane" id="captain">
+		                            	<div class="row">
+			                            	<div class="col-sm-12">
+			                                	<h4 class="info-text"> Search for your favorite songs</h4>
+			                            	</div>
+		                                	<div class="col-sm-6">
+												<div class="input-group">
+													
+													<div class="form-group label-floating">
+			                                          	<label class="control-label">Movie</label>
+			                                          	<input name="smovie" type="text" class="form-control">
+			                                        </div>
+												</div>
+
+												<div class="input-group">
+													
+													<div class="form-group label-floating">
+			                                          	<label class="control-label">Singer</label>
+			                                          	<input name="singer" type="text" class="form-control">
+			                                        </div>
+												</div>
+												
+		                                	</div>
+		                                	<div class="col-sm-12">
+	                            	<div class="pull-right">
+	                                    
+	                                    <input class="button" type='submit' name='ssubmit' value='Submit' />
+	                                </div>
+	                                
+	                                
+	                        	</div>		                                	
+		                            	</div>
+		                            </div> 
+
+		                            
+		                        </div>
+	                        	<!-- <div class="wizard-footer">
+	                            	<div class="pull-right">
+	                                    <input type='submit'name='moviesubmit' value='Submit' />
+	                                    <input type='submit' name='songsubmit' value='Submit' />
+	                                </div>
+	                                
+	                                <div class="clearfix"></div>
+	                        	</div> -->
+		                    </form>
+		                </div>
+		            </div> <!-- wizard container -->
+		        </div>
+	    	</div> <!-- row -->
+		</div> <!--  big container -->
+
+	    
+	</div>
+
+</body>
+	<!--   Core JS Files   -->
+	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/js/jquery.bootstrap.js" type="text/javascript"></script>
+
+	<!--  Plugin for the Wizard -->
+	<script src="assets/js/material-bootstrap-wizard.js"></script>
+
+	<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->
+	<script src="assets/js/jquery.validate.min.js"></script>
+</html>
